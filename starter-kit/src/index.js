@@ -4,9 +4,9 @@ import { PhotoPuzzleGame } from "./puzzle";
 
 // const para = document.createElement("p");
 // para.textContent = `Hello World, 2 + 5 = ${sum(2, 5)}`;
-//document.body.append(para);
+// document.body.append(para);
 
-// initialise variables
+// Get HTML elements, width, height and image
 let start = document.getElementById("start-area")
 let template = document.getElementById("template-area");
 let height = document.querySelector(".puzzle-container").clientHeight
@@ -16,5 +16,3 @@ let imgsrc = "https://media.istockphoto.com/photos/panoramic-view-of-stockholm-o
 // start an instance
 const photoTest = new PhotoPuzzleGame(start, template, width, height, imgsrc)
 photoTest.setup();
-
-// when setting difficulty

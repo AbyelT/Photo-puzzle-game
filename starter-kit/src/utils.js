@@ -2,21 +2,22 @@ export function sum(a, b) {
   return a + b;
 }
 
-// makes sure we can drag over and drop pieces onto placeholders
-export function makePlaceholderDropable(pieceDiv, templateArea) {
-  pieceDiv.addEventListener("dragover", (evt) => { 
+// makes sure we can drag and drop pieces onto placeholders
+export function makePlaceholderDropable(pieceDiv, templateArea, timer) {
+  pieceDiv.addEventListener("dragover", function(evt) { 
       evt.preventDefault();
       evt.dataTransfer.dropEffect = "move";
   });
-  pieceDiv.addEventListener("drop", (evt) => {
+  pieceDiv.addEventListener("drop", function(evt) {
       evt.preventDefault();
-      if (evt.target.tagName === "DIV") {       //check if the placeholder is not taken by another piece
+      if (evt.target.tagName === "DIV") {                      // check if the placeholder is free
         const data = evt.dataTransfer.getData("img");
         evt.target.appendChild(document.getElementById(data));
 
         let Placeholders = Array.from(templateArea.children);  // check if the player winns
         if (playerWins(Placeholders)) {
           window.alert("You win!")
+          clearInterval(timer);
         }
       }
   });
@@ -25,9 +26,11 @@ export function makePlaceholderDropable(pieceDiv, templateArea) {
 // makes the piece dragable
 export function makePieceDragable(pieceImg) {
   pieceImg.draggable = true
-  pieceImg.addEventListener("dragstart", (evt) => {
+  pieceImg.addEventListener("dragstart", {
+    handleEvent: function (evt) {
       evt.dataTransfer.setData("img", evt.target.id);
       evt.dataTransfer.effectAllowed = "move";
+    }
   });
 }
 

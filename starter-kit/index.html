@@ -8,25 +8,21 @@
 <body>
   <h1>Photo puzzle game</h1>
   <div id="navbar">
-    <div id="diff-selector-container">
-      <label for="difficulty">Difficulty: </label>
-      <select id="diff" name="difficulty">
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-      </select>
-    </div>
-    <!-- <p>About</p> -->
-    <!-- <p>Scoreboard</p> -->
+    <h1 class="navbar-text">Time</h1>
+    <span class="navbar-text" id="timer"></span>
+    <h1 class="navbar-text" for="difficulty">Difficulty: </h1>
+    <select class="navbar-text" id="diff" name="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
   </div> 
-  <!-- One div for time later-->
   <div id="game-container-grid">
-
     <div class="puzzle-container" id="start-area">
-      <!-- dynamically generate smaller div with img like in pokesearch with images-->
+      <!-- dynamically generate smaller div as containers, with img as pieces-->
     </div>
     <div class="puzzle-container" id="template-area">
-      <!-- dynamically generate grid with smaller divs, start with 4x2-->
+      <!-- dynamically generate smaller divs for dropping pieces -->
     </div>
   </div>
 </body>
