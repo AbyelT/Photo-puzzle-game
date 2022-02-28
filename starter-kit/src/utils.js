@@ -3,20 +3,18 @@ export function sum(a, b) {
 }
 
 // makes sure we can drag over and drop pieces onto placeholders
-export function makePlaceholderDropable(pieceDiv) {
+export function makePlaceholderDropable(pieceDiv, templateArea) {
   pieceDiv.addEventListener("dragover", (evt) => { 
       evt.preventDefault();
       evt.dataTransfer.dropEffect = "move";
   });
   pieceDiv.addEventListener("drop", (evt) => {
       evt.preventDefault();
-      //check if the placeholder is not taken 
-      if (evt.target.tagName === "DIV") {
+      if (evt.target.tagName === "DIV") {       //check if the placeholder is not taken by another piece
         const data = evt.dataTransfer.getData("img");
         evt.target.appendChild(document.getElementById(data));
 
-        // check if the player winns
-        let Placeholders = Array.from(evt.target.parentElement.children);
+        let Placeholders = Array.from(templateArea.children);  // check if the player winns
         if (playerWins(Placeholders)) {
           window.alert("You win!")
         }
@@ -33,7 +31,7 @@ export function makePieceDragable(pieceImg) {
   });
 }
 
-//a function for shuffling an array
+// function for shuffling an array
 export function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
 
@@ -46,12 +44,9 @@ export function shuffle(array) {
   return array;
 } 
 
+// checks if all placeholder contains correct piece
 function playerWins(placeholders) {
   for(let i = 0; i < placeholders.length; i++) {
-    if(placeholders[i].firstChild != null) {
-      console.log(placeholders[i].firstChild.id)
-      console.log(placeholders[i].attributes.index.value)
-    }
     if(placeholders[i].firstChild == null || placeholders[i].attributes.index.value != placeholders[i].firstChild.id) 
       return false
   }

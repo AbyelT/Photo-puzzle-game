@@ -61,7 +61,7 @@ export class PhotoPuzzleGame {
         placeholderDiv.setAttribute("index", id) 
         placeholderDiv.style.width = placeholderDiv.style.height =  `${length}px`
         
-        makePlaceholderDropable(placeholderDiv)      // makes the placeholder dropable
+        makePlaceholderDropable(placeholderDiv, this.templateArea)      // makes the placeholder dropable
         puzzleContainer.appendChild(placeholderDiv)  
 
         return placeholderDiv
