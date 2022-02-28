@@ -11,3 +11,63 @@ h1 {
   letter-spacing: 3px;
   border-bottom: 5px solid $secondary-color;
 }
+
+// the ideal solution for a full-page by freecodecamp
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
+//the navigation bar
+#navbar {
+  display: inline-block;
+  text-align: center;
+  background-color: #dd2a30;
+  width: 100%;
+  height: 40px; //temp
+  margin-bottom: 50px;
+
+  //box-sizing: border-box;
+}
+
+#diff-selector-container{
+  padding: 10px;
+}
+
+//the game container
+#game-container-grid {
+  width: auto;
+  display: grid; 
+  justify-items: center;
+  grid-template-columns: 1fr 1fr; 
+  //border: 1px solid black;
+  //grid-gap: 20px; 
+}
+
+//container for both the rack and template
+.puzzle-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;       // fallback incase
+  align-content: center;
+  width: 590px;
+  height: 300px;
+  margin: 5px; 
+  border: 2px solid rgb(189, 189, 189);
+}
+
+.placeholder {
+  background-color: rgb(156, 156, 156);
+  border: solid 2px lightgray;
+}
+
+// single puzzle piece
+
+/*
+#puzzle-init{
+}
+
+#blank-grid {
+}*/

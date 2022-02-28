@@ -2,6 +2,8 @@
 
 ![Example Puzzle](./.github/example.png "Example Puzzle")
 
+## own text here
+
 We would like you to implement a photo puzzle game. In this game, the player will be provided shuffled pieces of a photo and a blank grid to drag and drop those pieces. When all the pieces have been dropped at their respective correct slot, the player has won the game. All the scrambled pieces should start from a "rack" which could be arranged in any fashion (row, column, or grid). And the player would pick and drop them into a "template" which should be a grid with blank spaces expecting pieces from the "rack". For simplicity, you can use a square image and divide it into smaller squares as puzzle pieces. Any level of simplicity is accepted for the game.
 
 You are free to implement this however you see fit using plain Javascript, and please do not use any frameworks or non-utility libraries. You can use utility libraries, such as Lodash, Ramda, Underscore, etc (collections of functions implementing common tasks). We suggest not spending more than 3 hours on the task (this is both to not put too much work on you, and also to scope how much code we will go through in the interview). We’ll test your game using Chrome, so make sure it works there at least 😉

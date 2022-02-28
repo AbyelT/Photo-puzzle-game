@@ -12,6 +12,10 @@ const config = {
     filename: "[name].[contenthash].js",
     clean: true,
   },
+  // TODO: added due to default port unavailable, remove later
+  devServer: {
+    port: 8081,
+  },
   module: {
     rules: [
       {
