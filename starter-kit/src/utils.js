@@ -16,8 +16,8 @@ export function makePlaceholderDropable(pieceDiv, templateArea, timer) {
 
         let Placeholders = Array.from(templateArea.children);  // check if the player winns
         if (playerWins(Placeholders)) {
-          window.alert("You win!")
           clearInterval(timer);
+          window.alert("You win!")
         }
       }
   });
